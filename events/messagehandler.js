@@ -185,6 +185,21 @@ async function handleIncomingMessage(client, event) {
                     await react(client, message)
                     await tag.tag(client, message)
                     break
+case 'morpion':
+    await morpion(client, message)
+    break
+
+case 'quiz':
+    await quiz(client, message)
+    break
+
+case 'anagramme':
+    await anagramme(client, message)
+    break
+
+case 'piege':
+    await piege(client, message)
+    break
 
                 case 'tagall': // @cat: group
                     await react(client, message)
