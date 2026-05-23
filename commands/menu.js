@@ -130,7 +130,7 @@ menu += `┗━━━━━━━━━━━━━━━
         await client.sendMessage(
           remoteJid,
           {
-            video: { url: "database/DigiX.mp3" },
+            image: { url: "database/menu.jpg" },
             caption: stylizedChar(menu)
           },
           { quoted: message }
