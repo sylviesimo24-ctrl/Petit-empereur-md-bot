@@ -1,3 +1,4 @@
+import { gameMenu, dice, coin, joke } from '../commands/game.js'
 import configmanager from "../utils/configmanager.js"
 import fs from 'fs/promises'
 import group from '../commands/group.js'
