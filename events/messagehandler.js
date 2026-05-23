@@ -6,9 +6,14 @@ joke,
 morpion,
 quiz,
 anagramme,
-piege
+piege,
+bomb,
+devine,
+chance,
+combat,
+love,
+casino
 } from '../commands/game.js'
-import { gameMenu, dice, coin, joke } from '../commands/game.js'
 import configmanager from "../utils/configmanager.js"
 import fs from 'fs/promises'
 import group from '../commands/group.js'
@@ -104,7 +109,31 @@ async function handleIncomingMessage(client, event) {
                     await pp.setpp(client, message)
                     break
 
-                case 'getpp': // @cat: utils
+                case 'getpp': //
+case 'bomb':
+    await bomb(client, message)
+    break
+
+case 'devine':
+    await devine(client, message)
+    break
+
+case 'chance':
+    await chance(client, message)
+    break
+
+case 'combat':
+    await combat(client, message)
+    break
+
+case 'love':
+    await love(client, message)
+    break
+
+case 'casino':
+    await casino(client, message)
+    break
+ @cat: utils
                     await react(client, message)
                     await pp.getpp(client, message)
                     break
