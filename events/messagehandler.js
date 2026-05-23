@@ -1,3 +1,13 @@
+import {
+gameMenu,
+dice,
+coin,
+joke,
+morpion,
+quiz,
+anagramme,
+piege
+} from '../commands/game.js'
 import { gameMenu, dice, coin, joke } from '../commands/game.js'
 import configmanager from "../utils/configmanager.js"
 import fs from 'fs/promises'
