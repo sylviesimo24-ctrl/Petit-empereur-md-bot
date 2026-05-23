@@ -335,3 +335,5 @@ case 'delprem': // @cat: premium
 }
 
 export default handleIncomingMessage
+
+import { gameMenu, dice, coin, joke } from '../commands/game.js'
