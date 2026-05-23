@@ -150,3 +150,6 @@ menu += `┗━━━━━━━━━━━━━━━
     console.log("error while displaying menu:", err);
   }
 }
+
+if (c === "creator") return "👑";
+if (c === "games") return "🎮";
