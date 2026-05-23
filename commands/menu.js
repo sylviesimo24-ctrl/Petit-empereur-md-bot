@@ -66,7 +66,7 @@ export default async function info(client, message) {
     const day = daysFR[now.getDay()];
 
     
-    const handlerPath = path.join(__dirname, "../events/messageHandler.js");
+    const handlerPath = path.join(__dirname, "../events/messagehandler.js");
     const handlerCode = fs.readFileSync(handlerPath, "utf-8",);
 
     const commandRegex =
