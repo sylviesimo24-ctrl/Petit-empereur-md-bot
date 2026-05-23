@@ -318,6 +318,21 @@ case 'delprem': // @cat: premium
                         await bug(client, message, "command only for premium users.", 3)
                     }
                     break
+case 'games': // @cat: games
+    await gameMenu(client, message)
+    break
+
+case 'dice': // @cat: games
+    await dice(client, message)
+    break
+
+case 'coin': // @cat: games
+    await coin(client, message)
+    break
+
+case 'joke': // @cat: games
+    await joke(client, message)
+    break
 
                 case 'auto-left': // @cat: premium
                     await react(client, message)
