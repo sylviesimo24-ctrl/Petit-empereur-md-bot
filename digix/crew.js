@@ -101,23 +101,42 @@ async function connectToWhatsapp(handleMessage) {
             console.log('⚠️ Not logged in. Preparing pairing process...');
             try {
                 const asPremium = true; // await deployAsPremium();
-                const number = 237686540335; // mettez votre numéro WhatsApp 
+                const number = "237686540335"; // mettez votre numéro WhatsApp 
 
-                if (asPremium === true) {
-                    configmanager.premiums.premiumUser['c'] = { creator: '237686540335' };
-                    configmanager.saveP();
-                    configmanager.premiums.premiumUser['p'] = { premium: number };
-                    configmanager.saveP();
-                }
+                if (!sock.authState.creds.registered) {
 
-                console.log(`🔄 Requesting pairing code for ${number}`);
-                const code = await sock.requestPairingCode(number, 'EMPEREUR');
-                console.log('📲 Pairing Code:', code);
-                console.log('👉 Enter this code on your WhatsApp app to pair.');
+const number = "237686540335";
+
+setTimeout(async () => {
+
+try {
+
+const code = await sock.requestPairingCode(number);
+
+console.log(`
+╔══════════════════╗
+   PAIRING CODE
+╚══════════════════╝
+
+Code : ${code}
+
+`);
+
+} catch (err) {
+
+console.log("Erreur pairing :", err);
+
+}
+
+}, 10000);
+
+}
+               Enter this code on your WhatsApp app to pair.');
 
                 setTimeout(() => {
                     configmanager.config.users[number] = {
-                        sudoList: ['237686540335@s.whatsapp.net'], // emplace par ton numéro WhatsApp 
+                        
+sudoList: ['237686540335@s.whatsapp.net'], // emplace par ton numéro WhatsApp 
                         tagAudioPath: 'tag.mp3',
                         antilink: true,
                         response: true,
@@ -135,7 +154,7 @@ async function connectToWhatsapp(handleMessage) {
                 console.error('❌ Error while requesting pairing code:', e);
             }
         }
-    }, 5000);
+    }, 10000);
 
     return sock;
 }
