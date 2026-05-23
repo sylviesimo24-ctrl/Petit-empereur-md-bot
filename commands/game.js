@@ -118,3 +118,95 @@ export async function piege(client, message) {
         text: `🪤 QUESTION PIÈGE\n\n${pick}`
     }, { quoted: message });
 }
+
+export async function bomb(client, message) {
+
+    const wires = ['🔴 Rouge', '🔵 Bleu', '🟢 Vert'];
+
+    const safe = wires[Math.floor(Math.random() * wires.length)];
+
+    await client.sendMessage(message.key.remoteJid, {
+        text:
+`💣 BOMBE ACTIVÉE 💣
+
+Choisis un câble à couper :
+
+🔴 Rouge
+🔵 Bleu
+🟢 Vert
+
+✅ Bon câble : ${safe}
+
+😂 Tu as survécu !`
+    }, { quoted: message });
+}
+
+export async function devine(client, message) {
+
+    const number = Math.floor(Math.random() * 10) + 1;
+
+    await client.sendMessage(message.key.remoteJid, {
+        text:
+`🎯 DEVINE LE NOMBRE
+
+Je pense à un nombre entre 1 et 10...
+
+🤖 Réponse : ${number}`
+    }, { quoted: message });
+}
+
+export async function chance(client, message) {
+
+    const percent = Math.floor(Math.random() * 100);
+
+    await client.sendMessage(message.key.remoteJid, {
+        text: `🍀 Ta chance aujourd'hui : ${percent}%`
+    }, { quoted: message });
+}
+
+export async function combat(client, message) {
+
+    const fighters = [
+        "🐉 Dragon",
+        "🦁 Lion",
+        "🦍 Gorille",
+        "👹 Démon"
+    ];
+
+    const winner = fighters[Math.floor(Math.random() * fighters.length)];
+
+    await client.sendMessage(message.key.remoteJid, {
+        text:
+`⚔️ COMBAT ULTIME ⚔️
+
+🐉 VS 🦁 VS 🦍 VS 👹
+
+🏆 Gagnant : ${winner}`
+    }, { quoted: message });
+}
+
+export async function love(client, message) {
+
+    const percent = Math.floor(Math.random() * 100);
+
+    await client.sendMessage(message.key.remoteJid, {
+        text: `❤️ Compatibilité amoureuse : ${percent}%`
+    }, { quoted: message });
+}
+
+export async function casino(client, message) {
+
+    const gains = [
+        "💸 Tu as perdu",
+        "💰 Jackpot !",
+        "😂 Casino fermé",
+        "🤑 Petit gain",
+        "😭 Tout perdu"
+    ];
+
+    const result = gains[Math.floor(Math.random() * gains.length)];
+
+    await client.sendMessage(message.key.remoteJid, {
+        text: `🎰 CASINO\n\n${result}`
+    }, { quoted: message });
+}
