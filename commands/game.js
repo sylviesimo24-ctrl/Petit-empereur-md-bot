@@ -43,3 +43,78 @@ export async function joke(client, message) {
         text: pick
     }, { quoted: message });
 }
+export async function morpion(client, message) {
+
+    const board = `
+⭕❌⭕
+❌⭕❌
+⭕❌⭕
+`;
+
+    await client.sendMessage(message.key.remoteJid, {
+        text: `🎮 JEU MORPION\n${board}`
+    }, { quoted: message });
+}
+
+export async function quiz(client, message) {
+
+    const questions = [
+        {
+            q: "🌍 Capitale du Cameroun ?",
+            r: "Yaoundé"
+        },
+        {
+            q: "⚽ Combien de joueurs dans une équipe de foot ?",
+            r: "11"
+        },
+        {
+            q: "🐍 Python est un langage ou un animal ?",
+            r: "Les deux 😂"
+        }
+    ];
+
+    const pick = questions[Math.floor(Math.random() * questions.length)];
+
+    await client.sendMessage(message.key.remoteJid, {
+        text: `🧠 QUIZZ\n\n${pick.q}\n\n✅ Réponse : ${pick.r}`
+    }, { quoted: message });
+}
+
+export async function anagramme(client, message) {
+
+    const words = [
+        {
+            m: "TAC",
+            r: "CHAT"
+        },
+        {
+            m: "MEACRUON",
+            r: "CAMEROUN"
+        },
+        {
+            m: "TPHNOE",
+            r: "PHONE"
+        }
+    ];
+
+    const pick = words[Math.floor(Math.random() * words.length)];
+
+    await client.sendMessage(message.key.remoteJid, {
+        text: `🔠 ANAGRAMME\n\nMot mélangé : ${pick.m}\n\n✅ Réponse : ${pick.r}`
+    }, { quoted: message });
+}
+
+export async function piege(client, message) {
+
+    const pieges = [
+        "❓ Je parle sans bouche et j'entends sans oreilles. Qui suis-je ?\n\n✅ Réponse : un écho",
+        "❓ Plus tu prends de moi, plus je grandis.\n\n✅ Réponse : un trou",
+        "❓ Qu’est-ce qui monte mais ne descend jamais ?\n\n✅ Réponse : l’âge"
+    ];
+
+    const pick = pieges[Math.floor(Math.random() * pieges.length)];
+
+    await client.sendMessage(message.key.remoteJid, {
+        text: `🪤 QUESTION PIÈGE\n\n${pick}`
+    }, { quoted: message });
+}
