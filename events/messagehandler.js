@@ -351,4 +351,4 @@ case 'coin': // @cat: games
 
 export default handleIncomingMessage
 
-import { gameMenu, dice, coin, joke } from '../commands/game.js'
+import { gameMenu, dice, coin, } from '../commands/game.js'
