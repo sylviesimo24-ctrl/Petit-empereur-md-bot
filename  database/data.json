@@ -1,8 +1,0 @@
-nano database/data.json
-{
-  "users": [],
-  "settings": {
-    "name": "MDBook",
-    "creator": "amateur"
-  }
-}
