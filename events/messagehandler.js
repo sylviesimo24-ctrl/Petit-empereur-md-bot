@@ -1,18 +1,4 @@
-import {
-gameMenu,
-dice,
-coin,
-joke,
-morpion,
-quiz,
-anagramme,
-piege,
-bomb,
-devine,
-chance,
-combat,
-love,
-casino
+import { gameMenu, dice, coin } from '../commands/game.js'
 } from '../commands/game.js'
 import configmanager from "../utils/configmanager.js"
 import fs from 'fs/promises'
@@ -109,30 +95,7 @@ async function handleIncomingMessage(client, event) {
                     await pp.setpp(client, message)
                     break
 
-                case 'getpp': //
-case 'bomb':
-    await bomb(client, message)
-    break
-
-case 'devine':
-    await devine(client, message)
-    break
-
-case 'chance':
-    await chance(client, message)
-    break
-
-case 'combat':
-    await combat(client, message)
-    break
-
-case 'love':
-    await love(client, message)
-    break
-
-case 'casino':
-    await casino(client, message)
-    break
+                case 'getpp': 
  @cat: utils
                     await react(client, message)
                     await pp.getpp(client, message)
@@ -224,21 +187,7 @@ case 'casino':
                     await react(client, message)
                     await tag.tag(client, message)
                     break
-case 'morpion':
-    await morpion(client, message)
-    break
 
-case 'quiz':
-    await quiz(client, message)
-    break
-
-case 'anagramme':
-    await anagramme(client, message)
-    break
-
-case 'piege':
-    await piege(client, message)
-    break
 
                 case 'tagall': // @cat: group
                     await react(client, message)
