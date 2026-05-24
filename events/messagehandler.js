@@ -1,5 +1,5 @@
-import { gameMenu, dice, coin } from '../commands/game.js'
-} from '../commands/game.js'
+import { dice, coin } from '../commands/game.js'
+import configmanager from "../utils/configmanager.js"
 import configmanager from "../utils/configmanager.js"
 import fs from 'fs/promises'
 import group from '../commands/group.js'
@@ -332,10 +332,6 @@ case 'dice': // @cat: games
 
 case 'coin': // @cat: games
     await coin(client, message)
-    break
-
-case 'joke': // @cat: games
-    await joke(client, message)
     break
 
                 case 'auto-left': // @cat: premium
